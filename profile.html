@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join the Movement</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+           background: conic-gradient(
+               red, orange, yellow, green, cyan, violet, red
+           );
+           font-family: Arial, sans-serif;
+           
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #007BFF;
+            margin-bottom: 10px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .sub-text {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 30px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .profile-container {
+            background: rgb(237, 163, 247);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            width: 350px;
+            margin: auto;
+            text-align: center;
+            animation: slideUp 1s ease-in-out;
+        }
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #007BFF;
+            margin-bottom: 15px;
+        }
+        .upload-btn {
+            display: block;
+            background: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-bottom: 15px;
+            transition: background 0.3s ease;
+        }
+        .upload-btn:hover {
+            background: #0056b3;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .join-btn {
+            display: block;
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1rem;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        .join-btn:hover {
+            background: #218838;
+            transform: scale(1.05);
+        }
+        button{
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .profile-container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Join the Movement</h1>
+    <p class="sub-text">Be part of the change and contribute to a sustainable future.</p>
+
+    <div class="profile-container">
+        <img src="https://via.placeholder.com/100" class="profile-pic" id="profilePic">
+        <input type="file" id="fileInput" accept="image/*" style="display: none;">
+        <button class="upload-btn" onclick="document.getElementById('fileInput').click();">Upload Profile Picture</button>
+
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Why do you want to join?" rows="3" required></textarea>
+        <button id="submit"><a href="index.html" target="_blank" style="text-decoration: none; color: rgb(224, 15, 12);">Submit</a></button>
+    </div>
+
+    <script>
+        document.getElementById('fileInput').addEventListener('change', function(event) {
+            let file = event.target.files[0];
+            if (file) {
+                let reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('profilePic').src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+
+</body>
+</html>
