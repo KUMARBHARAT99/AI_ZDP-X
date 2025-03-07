@@ -83,11 +83,11 @@ h1, h2 {
 }
 
 button {
-    background-color: #23914b;
+    background-color: #f15ff3;
     color: white;
     border: none;
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 20px 40px;
+    font-size: 26px;
     cursor: pointer;
 }
 
